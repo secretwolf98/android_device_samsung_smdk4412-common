@@ -635,6 +635,7 @@ int exynos_camera_params_init(struct exynos_camera *exynos_camera, int id)
 		exynos_param_string_set(exynos_camera, "zoom-supported", "false");
 	}
 
+#ifndef EXYNOS_ISX012
 	// AE lock
 
 	if (exynos_camera->config->presets[id].params.auto_exposure_lock_supported == 1) {
@@ -656,6 +657,7 @@ int exynos_camera_params_init(struct exynos_camera *exynos_camera, int id)
 		else
 			exynos_param_string_set(exynos_camera, "auto-whitebalance-lock", "false");
 	}
+#endif
 
 	// Flash
 
@@ -1107,6 +1109,7 @@ int exynos_camera_params_apply(struct exynos_camera *exynos_camera, int force)
 
 	}
 
+#ifndef EXYNOS_ISX012
 	// AE lock
 
 	ae_lock_supported_string = exynos_param_string_get(exynos_camera, "auto-exposure-lock-supported");
@@ -1124,6 +1127,7 @@ int exynos_camera_params_apply(struct exynos_camera *exynos_camera, int force)
 		awb_lock = 1;
 	else
 		awb_lock = 0;
+#endif
 
 	// Scene mode
 
