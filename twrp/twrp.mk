@@ -29,4 +29,3 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_THEME := portrait_hdpi
 TW_EXCLUDE_SUPERSU := true
-TW_USE_TOOLBOX := true
