@@ -27,5 +27,11 @@ RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
-TW_THEME := portrait_hdpi
+
+ifeq ($(PRODUCT_CHARACTERISTICS),tablet)
+    TW_THEME := landscape_hdpi
+else
+    TW_THEME := portrait_hdpi
+endif
+
 TW_EXCLUDE_SUPERSU := true
