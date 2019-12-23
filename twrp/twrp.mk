@@ -29,9 +29,7 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 
 ifeq ($(PRODUCT_CHARACTERISTICS),tablet)
-    TW_THEME := landscape_hdpi
+    TW_THEME := landscape_mdpi
 else
     TW_THEME := portrait_hdpi
 endif
-
-TW_EXCLUDE_SUPERSU := true
